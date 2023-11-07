@@ -7,6 +7,11 @@ git clone https://github.com/lturing/yolo_track
 cd yolo_track
 1. 修改predict_kitti00_v2.py中的model_path、source，其中model_path为预训练模型参数的路径，source为图片路径
 2. 根据图片分辨率修改torchyolo/configs/default_config.yaml中的IMAGE_SIZE(图片高度和宽度的最大值)
+3. 根据数据的帧率修改 
+    https://github.com/lturing/yolo_track/blob/main/torchyolo/modelhub/yolov5.py#L94
+    https://github.com/lturing/yolo_track/blob/main/torchyolo/modelhub/yolov7.py#L89
+    https://github.com/lturing/yolo_track/blob/main/torchyolo/modelhub/yolov8.py#L93
+    等处的fps，fps将影响保存视频的帧率
 
 # 下载yolo的预训练参数
 - [yolov5](https://github.com/ultralytics/yolov5/releases)
